@@ -12,3 +12,9 @@ fun TextView.setFont(fontPath: String) {
     val typeface = Typeface.createFromAsset(this.context.assets, fontPath);
     this.typeface = typeface
 }
+
+fun String.findDuplicateCharsCount(input: String): Int {
+    return this.filter {
+        input.contains(it)
+    }.length
+}
