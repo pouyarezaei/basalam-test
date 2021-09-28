@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Basalam_t1</string>
+    <string name="app_name">Basalam t1</string>
+    <string name="recycler_item_title_format">%1$s / %2$s</string>
+    <string name="recycler_item_subtitle_format">تعداد حروف مشترک : %1$d</string>
 </resources>
