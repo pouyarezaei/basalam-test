@@ -1,5 +1,7 @@
 package com.github.pouyarezaei.basalam_t1.di.module
 
+import com.github.pouyarezaei.basalam_t1.BuildConfig
+import com.github.pouyarezaei.basalam_t1.data.remote.NetworkConnectionInterceptor
 import com.github.pouyarezaei.basalam_t1.util.BASE_URL
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -13,10 +15,12 @@ import javax.inject.Singleton
 
 @Module
 class CoreNetworkModule {
+
     @Provides
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().also {
-            it.level = HttpLoggingInterceptor.Level.BASIC
+            it.level =
+                if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BASIC else HttpLoggingInterceptor.Level.NONE
         }
     }
 
@@ -33,10 +37,13 @@ class CoreNetworkModule {
     @Singleton
     @Provides
     fun provideOkHttp(
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        networkConnectionInterceptor: NetworkConnectionInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(httpLoggingInterceptor).build()
+            .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(networkConnectionInterceptor)
+            .build()
     }
 
     @Singleton
