@@ -16,5 +16,5 @@ fun TextView.setFont(fontPath: String) {
 fun String.findDuplicateCharsCount(input: String): Int {
     return this.filter {
         input.contains(it)
-    }.length
+    }.toSet().size
 }
