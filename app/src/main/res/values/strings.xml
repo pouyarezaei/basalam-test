@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Basalam t1</string>
+    <string name="main_fragment_title">لیست حیوانات و گل ها</string>
     <string name="recycler_item_title_format">%1$s / %2$s</string>
     <string name="recycler_item_subtitle_format">تعداد حروف مشترک : %1$d</string>
 </resources>
