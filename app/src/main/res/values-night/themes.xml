@@ -15,9 +15,12 @@
 
     </style>
 
+    <style name="progressBarPomegranate" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/pomegranate</item>
+    </style>
+
     <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
         <item name="cornerSize">25%</item>
         <item name="cornerFamily">rounded</item>
-
     </style>
 </resources>
