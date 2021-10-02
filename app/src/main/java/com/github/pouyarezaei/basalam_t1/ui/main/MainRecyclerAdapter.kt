@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.github.pouyarezaei.basalam_t1.R
 import com.github.pouyarezaei.basalam_t1.data.domain.InformationDomainModel
-import com.github.pouyarezaei.basalam_t1.util.findDuplicateCharsCount
+import com.github.pouyarezaei.basalam_t1.util.findDuplicateChars
 
 class MainRecyclerAdapter(
     private val recyclerClick: RecyclerViewItemClick<List<InformationDomainModel>>
@@ -24,24 +25,36 @@ class MainRecyclerAdapter(
             model: List<InformationDomainModel>,
             recyclerClick: RecyclerViewItemClick<List<InformationDomainModel>>
         ) {
+            val circularProgressDrawable = CircularProgressDrawable(itemView.context).apply {
+                this.strokeWidth = 5f
+                this.centerRadius = 30f
+                this.start()
+            }
             itemView.findViewById<TextView>(R.id.recycler_item_title).text =
                 itemView.context.getString(
                     R.string.recycler_item_title_format,
                     model.first().name,
                     model.last().name
                 )
+
             itemView.findViewById<TextView>(R.id.recycler_item_subtitle).text =
                 itemView.context.getString(
                     R.string.recycler_item_subtitle_format,
-                    model.first().name?.findDuplicateCharsCount(model.last().name!!)
+                    model.first().name?.findDuplicateChars(model.last().name!!)?.size
                 )
+
             itemView.findViewById<Button>(R.id.recycler_item_show_button)
                 .setOnClickListener { recyclerClick.click(model) }
+
             Glide.with(itemView).load(model.first().image)
+                .placeholder(circularProgressDrawable)
                 .into(itemView.findViewById(R.id.recycler_item_back_img))
-            Glide.with(itemView).load(
-                model.last().image
-            ).into(itemView.findViewById(R.id.recycler_item_front_img))
+
+            Glide.with(itemView)
+                .load(
+                    model.last().image
+                ).placeholder(circularProgressDrawable)
+                .into(itemView.findViewById(R.id.recycler_item_front_img))
         }
     }
 
