@@ -6,14 +6,19 @@
         <entry key="app/src/main/res/drawable-v24/circular_back_button_shape.xml" value="0.3671875" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.36822916666666666" />
         <entry key="app/src/main/res/drawable/circular_button_shape.xml" value="0.25462962962962965" />
+        <entry key="app/src/main/res/drawable/default_pager_dot.xml" value="0.36614583333333334" />
         <entry key="app/src/main/res/drawable/ic_back_icon.xml" value="0.3671875" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.25462962962962965" />
         <entry key="app/src/main/res/drawable/ic_search_icon.xml" value="0.3671875" />
         <entry key="app/src/main/res/drawable/one_corner_rounded.xml" value="0.36614583333333334" />
         <entry key="app/src/main/res/drawable/rounded_image.xml" value="0.3671875" />
+        <entry key="app/src/main/res/drawable/rounded_slider_item.xml" value="0.21041666666666667" />
+        <entry key="app/src/main/res/drawable/selected_pager_dot.xml" value="0.36614583333333334" />
+        <entry key="app/src/main/res/drawable/tab_pager_selector.xml" value="0.3671875" />
         <entry key="app/src/main/res/font/iransans.xml" value="0.37435897435897436" />
         <entry key="app/src/main/res/layout-v21/main_activity.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/details_fragment.xml" value="0.35104166666666664" />
+        <entry key="app/src/main/res/layout/details_slider_item.xml" value="0.39556962025316456" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.39829605963791265" />
         <entry key="app/src/main/res/layout/main_recycler_item.xml" value="0.5" />
