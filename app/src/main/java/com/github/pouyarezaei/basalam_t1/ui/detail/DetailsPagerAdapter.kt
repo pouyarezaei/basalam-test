@@ -10,5 +10,5 @@ class DetailsPagerAdapter(fragment: Fragment, private val data: List<Information
     override fun getItemCount(): Int = data.size
 
     override fun createFragment(position: Int): Fragment =
-        DetailsPagerFragment(data[data.size - position - 1])
+        DetailsPagerFragment(data[position])
 }
