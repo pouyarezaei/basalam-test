@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 R.id.toolbar_option_button -> {
                     Toast.makeText(this, "toolbar_option_button", Toast.LENGTH_LONG).show()
-                    throw RuntimeException("Test Crash") // Force a crash
                 }
             }
         }
