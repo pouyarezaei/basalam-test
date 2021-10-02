@@ -13,8 +13,8 @@ fun TextView.setFont(fontPath: String) {
     this.typeface = typeface
 }
 
-fun String.findDuplicateCharsCount(input: String): Int {
+fun String.findDuplicateChars(input: String): Set<Char> {
     return this.filter {
         input.contains(it)
-    }.toSet().size
+    }.toSet()
 }
