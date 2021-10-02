@@ -25,7 +25,12 @@ class MainRecyclerAdapter(
             model: List<InformationDomainModel>,
             recyclerClick: RecyclerViewItemClick<List<InformationDomainModel>>
         ) {
-            val circularProgressDrawable = CircularProgressDrawable(itemView.context).apply {
+            val circularProgressDrawableFront = CircularProgressDrawable(itemView.context).apply {
+                this.strokeWidth = 5f
+                this.centerRadius = 30f
+                this.start()
+            }
+            val circularProgressDrawableBack = CircularProgressDrawable(itemView.context).apply {
                 this.strokeWidth = 5f
                 this.centerRadius = 30f
                 this.start()
@@ -47,13 +52,13 @@ class MainRecyclerAdapter(
                 .setOnClickListener { recyclerClick.click(model) }
 
             Glide.with(itemView).load(model.first().image)
-                .placeholder(circularProgressDrawable)
+                .placeholder(circularProgressDrawableBack)
                 .into(itemView.findViewById(R.id.recycler_item_back_img))
 
             Glide.with(itemView)
                 .load(
                     model.last().image
-                ).placeholder(circularProgressDrawable)
+                ).placeholder(circularProgressDrawableFront)
                 .into(itemView.findViewById(R.id.recycler_item_front_img))
         }
     }
