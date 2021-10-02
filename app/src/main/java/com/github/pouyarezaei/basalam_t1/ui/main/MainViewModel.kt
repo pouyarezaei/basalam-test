@@ -1,6 +1,5 @@
 package com.github.pouyarezaei.basalam_t1.ui.main
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.github.pouyarezaei.basalam_t1.data.domain.InformationDomainModel
 import com.github.pouyarezaei.basalam_t1.data.remote.NoConnectivityException
 import com.github.pouyarezaei.basalam_t1.repository.Repository
-import com.github.pouyarezaei.basalam_t1.util.TAG
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,9 +18,6 @@ class MainViewModel @Inject constructor(
     private val networkState: MutableLiveData<Boolean> = MutableLiveData()
     private val data: MutableLiveData<MutableList<List<InformationDomainModel>>> = MutableLiveData()
 
-    init {
-        Log.d(TAG, "MainViewModel: init")
-    }
 
     fun handleEvent(event: MainEvent) {
         when (event) {
