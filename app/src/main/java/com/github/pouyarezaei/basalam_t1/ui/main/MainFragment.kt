@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -84,8 +85,7 @@ class MainFragment : Fragment(R.layout.main_fragment),
     }
 
     override fun click(model: List<InformationDomainModel>) {
-        val bundle = Bundle()
-        bundle.putParcelableArrayList("data", ArrayList(model))
+        val bundle = bundleOf("data" to model)
         findNavController().navigate(R.id.action_mainFragment_to_detailsFragment, bundle)
     }
 
